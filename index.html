@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calamaitz</title>
+	<link rel="stylesheet" href="styles.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+			<div class="language-selector">
+				<select id="languageSelect" onchange="changeLanguage()">
+					<option value="en">🇬🇧 English</option>
+					<option value="it">🇮🇹 Italiano</option>
+				</select>
+			</div>
+            <div class="profile-section">
+                <img src="anime_developer.png" alt="My Profile Picture" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+				
+                <div>
+                    <h1>Luca Calamita</h1>
+                    <p class="nickname">aka Calamaitz</p>
+                    <p class="tagline" data-en="Engineering Student at UNIVPM" data-it="Studente di Ingegneria presso UNIVPM"></p>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+			<section class="section">
+				<h2 data-en="About Me" data-it="Chi Sono"></h2>
+				<p class="about-text" style="text-align: justify;"
+				   data-en="Hi! I'm Luca, an engineering student at Università Politecnica delle Marche (UNIVPM). I am 19 years old and I like to developing tools and learning new things. I love working on innovative projects and I am available to collaborate to realize interesting ideas! I attended the I.I.S. &#8220E. Mattei&#8221 Recanati high school, where I graduated with a 100/100 grade and there I discovered my passion for programming!" 
+				   data-it="Ciao! Sono Luca, uno studente di ingegneria presso l'Università Politecnica delle Marche (UNIVPM). Ho 19 anni e mi piace sviluppare tool e imparare cose nuove. Adoro lavorare su progetti innovativi e sono disponibile a collaborare per realizzare idee interessanti! Ho frequentato l'istituto di istruzione superiore I.I.S. &#8220E. Mattei&#8221 Recanati, dove mi sono diplomato con una valutazione di 100/100 e lì ho scoperto la mia passione per la programmazione!">
+				</p>
+			</section>
+            <section class="section">
+                <h2 data-en="Education & Certifications" data-it="Istruzione e Certificazioni"></h2>
+                
+                <div class="cv-item">
+                    <h3 data-en="🎓 High School Leaving Certificate" data-it="🎓 Diploma di Scuola Superiore"></h3>
+                    <p class="cv-title">I.I.S. "E. Mattei" - Recanati</p>
+                    <p class="cv-detail" data-en="Grade: 100/100" data-it="Voto: 100/100"></p>
+                </div>
+                <div class="cv-item">
+                    <h3 data-en="🤖 Robotics Programming Certification" data-it="🤖 Certificazione Programmazione Robotica"></h3>
+                    <p class="cv-title" data-en="Certified by AICA" data-it="Certificato da AICA"></p>
+                    <p class="cv-detail" data-en="Grade: 8.36/10" data-it="Voto: 8.36/10"></p>
+                </div>
+				<div class="cv-item">
+                    <h3 data-en="🖥️ Basic ECDL Certification" data-it="🖥️ Certificazione ECDL Base"></h3>
+                    <p class="cv-title" data-en="Certified by Sanoma Italia & FANUC" data-it="Certificato da Sanoma Italia & FANUC"></p>
+                    <p class="cv-detail" data-en="Knowledge of the following modules: Computer Essentials, Online Essentials, Spreadsheets and Word Processing" data-it="Conoscenza dei seguenti moduli: Computer Essentials, Online Essentials, Fogli di Calcolo e Elaborazione Testi"></p>
+                </div>
+                <div class="cv-item">
+                    <h3>🛡️ Olicyber Training Camp</h3>
+                    <p class="cv-title" data-en="Campus ITC ILO - Turin" data-it="Campus ITC ILO - Torino"></p>
+                    <p class="cv-detail" data-en="40-hour intensive training for Italian Cybersecurity Olympics" data-it="Formazione intensiva di 40 ore per le Olimpiadi Italiane di Cybersicurezza">40-hour intensive training for Italian Cybersecurity Olympics</p>
+                </div>
+				
+				<div class="cv-item">
+                    <h3 data-en="🌍 English Language Certification" data-it="🌍 Certificazione Lingua Inglese"></h3>
+                    <p class="cv-title" data-en="Certified by Cambridge University" data-it="Certificato dall'Università di Cambridge"></p>
+                    <p class="cv-detail" data-en="Level: B1" data-it="Livello: B1"></p>
+                </div>
+            </section>
+			<section class="section">
+                <h2 data-en="Projects" data-it="Progetti">Project</h2>
+                <div class="projects">
+					<a href="https://github.com/00luca00/Pad2Mouse" class="project-card" target="_blank">
+						<h3>Pad2Mouse</h3>
+						<p data-en="A tool to make your Xbox controller working on Windows." data-it="Uno strumento per far funzionare il tuo controller Xbox su Windows.">A tool to make your Xbox controller working on Windows.</p>
+						<p><strong><i>Tech Stack: C# and WPF (.NET Framework)</strong></i></p> 
+					</a>
+                </div>
+            </section>
+            <section class="section">
+                <h2 data-en="Connect With Me" data-it="Contattami"></h2>
+                <div class="social-links">
+                    <a href="https://github.com/00luca00" class="social-link" target="_blank">GitHub</a>
+                    <a href="mailto:lucacalamita2006@gmail.com" class="social-link">Email</a>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p>&copy; 2025 Calamaitz</p>
+        </footer>
+    </div>
+
+    <script>
+        function changeLanguage() {
+			const lang = document.getElementById('languageSelect').value;
+			const elements = document.querySelectorAll('[data-en]');
+    
+			elements.forEach(element => {
+				const text = element.getAttribute('data-' + lang);
+				element.textContent = text;
+			});
+    
+			localStorage.setItem('selectedLanguage', lang);
+		}
+
+		window.addEventListener('DOMContentLoaded', () => {
+			const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+			document.getElementById('languageSelect').value = savedLang;
+			changeLanguage();
+		});
+    </script>
+</body>
+</html>
