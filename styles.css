@@ -7,9 +7,9 @@
 		/*Language Menu*/
 		.language-selector {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+			top: 20px;
+			right: 20px;
+			z-index: 1000;
         }
         
         .language-selector select {
@@ -18,12 +18,30 @@
             border: 1px solid #30363d;
             background-color: #0d1117;
             color: #c9d1d9;
-            font-size: 14px;
+            font-size: 18px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+		
+		@media (min-width: 1500px) {
+			.language-selector {
+				position: fixed;
         
+				left: calc(50vw + 600px); 
+				right: 0;
+				
+				margin-left: auto;
+				margin-right: auto;
+				
+				transform: none; 
+				
+				width: fit-content; 
+				
+				top: 32px;
+			}
+		}
+				
         .language-selector select:focus {
             outline: none;
             border-color: #58a6ff;
