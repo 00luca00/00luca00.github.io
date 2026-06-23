@@ -131,6 +131,63 @@
             animation: scan 2s linear infinite;
         }
 
+		/*IASFJOPIAJSFIOAF*/
+		/* Container principale delle Skills che organizza le categorie */
+		.skills-container {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+		}
+
+		/* Struttura simile a .cv-item e .project-card, ma ottimizzata per contenere i tag */
+		.skills-category {
+			background: #0d1117;
+			padding: 20px;
+			border: 1px solid #30363d;
+			border-left: 3px solid #58a6ff;
+			border-radius: 4px;
+			transition: all 0.2s ease;
+		}
+
+		.skills-category:hover {
+			border-left-color: #1f6feb;
+			background: #161b22;
+		}
+
+		.skills-category h3 {
+			color: #c9d1d9;
+			margin-bottom: 15px;
+			font-size: 1.1em;
+			font-weight: 600;
+		}
+
+		/* Griglia interna per disporre i tag in modo fluido */
+		.skills-grid {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+
+		/* I singoli badge delle competenze */
+		.skill-tag {
+			background: #21262d;
+			color: #c9d1d9;
+			padding: 6px 12px;
+			font-size: 0.9em;
+			font-weight: 500;
+			border: 1px solid #30363d;
+			border-radius: 6px;
+			transition: all 0.2s ease;
+		}
+
+		/* Effetto al passaggio del mouse sui singoli tag */
+		.skill-tag:hover {
+			background: #30363d;
+			border-color: #58a6ff;
+			color: #58a6ff;
+		}
+		/*AHJSFLJçKHFJHAçSLFHASF*/
+
         .profile-section {
             display: flex;
             flex-direction: column;
